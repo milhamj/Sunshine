@@ -294,7 +294,7 @@ public class ForecastFragment extends Fragment {
                         .appendQueryParameter("appid", BuildConfig.OPEN_WEATHER_MAP_API_KEY)
                         .build();
 
-                Log.v(LOG_TAG, "Built URI " + builder.toString());
+                //Log.v(LOG_TAG, "Built URI " + builder.toString());
                 URL url = new URL(builder.toString());
 
                 // Create the request to OpenWeatherMap, and open the connection
@@ -326,7 +326,7 @@ public class ForecastFragment extends Fragment {
                 forecastJsonStr = buffer.toString();
                 //Log.v(LOG_TAG,"Forecast JSON String: " + forecastJsonStr);
             } catch (IOException e) {
-                Log.e(LOG_TAG, "Error ", e);
+                Log.e(LOG_TAG, "Error: Failed to fetch weather data", e);
                 // If the code didn't successfully get the weather data, there's no point in attempting
                 // to parse it.
                 return null;
