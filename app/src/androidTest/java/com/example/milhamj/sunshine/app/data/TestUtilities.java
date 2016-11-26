@@ -12,6 +12,7 @@ import android.test.AndroidTestCase;
 
 import com.example.milhamj.sunshine.app.data.WeatherContract;
 import com.example.milhamj.sunshine.app.data.WeatherDbHelper;
+import com.example.milhamj.sunshine.app.utils.PollingCheck;
 
 import java.util.Map;
 import java.util.Set;
@@ -131,19 +132,19 @@ public class TestUtilities extends AndroidTestCase {
             mContentChanged = true;
         }
 
-//        public void waitForNotificationOrFail() {
-//            // Note: The PollingCheck class is taken from the Android CTS (Compatibility Test Suite).
-//            // It's useful to look at the Android CTS source for ideas on how to test your Android
-//            // applications.  The reason that PollingCheck works is that, by default, the JUnit
-//            // testing framework is not running on the main Android application thread.
-//            new PollingCheck(5000) {
-//                @Override
-//                protected boolean check() {
-//                    return mContentChanged;
-//                }
-//            }.run();
-//            mHT.quit();
-//        }
+        public void waitForNotificationOrFail() {
+            // Note: The PollingCheck class is taken from the Android CTS (Compatibility Test Suite).
+            // It's useful to look at the Android CTS source for ideas on how to test your Android
+            // applications.  The reason that PollingCheck works is that, by default, the JUnit
+            // testing framework is not running on the main Android application thread.
+            new PollingCheck(5000) {
+                @Override
+                protected boolean check() {
+                    return mContentChanged;
+                }
+            }.run();
+            mHT.quit();
+        }
     }
 
     static TestContentObserver getTestContentObserver() {
