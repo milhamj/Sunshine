@@ -1,2 +1,2 @@
 # Sunshine
-My Udacity **Developing Android Apps** android application
+My Udacity **Developing Android Apps** application
