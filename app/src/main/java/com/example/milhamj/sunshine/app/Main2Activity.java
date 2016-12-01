@@ -28,7 +28,7 @@ public class Main2Activity extends AppCompatActivity {
                     .add(R.id.container, new ForecastFragment(), FORECASTFRAGMENT_TAG)
                     .commit();
         }
-
+        getSupportActionBar().setElevation(0f);
         Log.d(LOG_TAG, "onCreate");
     }
 
